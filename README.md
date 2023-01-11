@@ -8,7 +8,7 @@ Used to pop out a G1000 window on the touch screen display.
 
 ### Video Demo(with debug messages)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/TL5XNFdLN7E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/TL5XNFdLN7E/0.jpg)](https://www.youtube.com/watch?v=TL5XNFdLN7E)
 
 ### Descriptions
 
