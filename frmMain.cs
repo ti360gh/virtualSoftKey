@@ -123,397 +123,156 @@ namespace virtualSoftKey
 			switchToMSFS();
 		}
 
-		private void key1_Click(object sender, EventArgs e)
+		private void sendHver(string hvar)
 		{
 			connectToWASM();
+#if DEBUG
+			debug_message.Text = "sending " + hvar;
+#endif
+			if (VS.HVars.Exists(hvar))
+			{
+				VS.HVars[hvar].Set();
+#if DEBUG
+				debug_message.Text = hvar + "_send";
+#endif
+			}
+			switchToMSFS();
+		}
+		
+		private void key1_Click(object sender, EventArgs e)
+		{
 			if (eventMode == "MFD")
 			{
-#if DEBUG
-					debug_message.Text = "MFD_SOFTKEY1";
-#endif
-				if (VS.HVars.Exists("H:AS1000_MFD_SOFTKEYS_1"))
-				{
-					VS.HVars["H:AS1000_MFD_SOFTKEYS_1"].Set();
-#if DEBUG
-					debug_message.Text = "MFD_SOFTKEY1_send";
-#endif
-				}
+				sendHver("H:AS1000_MFD_SOFTKEYS_1");
 			}
 			else
 			{
-#if DEBUG
-					debug_message.Text = "PFD_SOFTKEY1";
-#endif
-				if (VS.HVars.Exists("H:AS1000_PFD_SOFTKEYS_1"))
-				{
-					VS.HVars["H:AS1000_PFD_SOFTKEYS_1"].Set();
-#if DEBUG
-					debug_message.Text = "PFD_SOFTKEY1_send";
-#endif
-				}
+				sendHver("H:AS1000_PFD_SOFTKEYS_1");
 			}
-			switchToMSFS();
 		}
 
 		private void key2_Click(object sender, EventArgs e)
 		{
-			connectToWASM();
 			if (eventMode == "MFD")
 			{
-#if DEBUG
-					debug_message.Text = "MFD_SOFTKEY2";
-#endif
-				if (VS.HVars.Exists("H:AS1000_MFD_SOFTKEYS_2"))
-				{
-					VS.HVars["H:AS1000_MFD_SOFTKEYS_2"].Set();
-#if DEBUG
-					debug_message.Text = "MFD_SOFTKEY2_send";
-#endif
-				}
+				sendHver("H:AS1000_MFD_SOFTKEYS_2");
 			}
 			else
 			{
-#if DEBUG
-					debug_message.Text = "PFD_SOFTKEY2";
-#endif
-				if (VS.HVars.Exists("H:AS1000_PFD_SOFTKEYS_2"))
-				{
-					VS.HVars["H:AS1000_PFD_SOFTKEYS_2"].Set();
-#if DEBUG
-					debug_message.Text = "PFD_SOFTKEY2_send";
-#endif
-				}
+				sendHver("H:AS1000_PFD_SOFTKEYS_2");
 			}
-			switchToMSFS();
 		}
-
 		private void key3_Click(object sender, EventArgs e)
 		{
-			connectToWASM();
 			if (eventMode == "MFD")
 			{
-#if DEBUG
-					debug_message.Text = "MFD_SOFTKEY3";
-#endif
-				if (VS.HVars.Exists("H:AS1000_MFD_SOFTKEYS_3"))
-				{
-					VS.HVars["H:AS1000_MFD_SOFTKEYS_3"].Set();
-#if DEBUG
-					debug_message.Text = "MFD_SOFTKEY3_send";
-#endif
-				}
+				sendHver("H:AS1000_MFD_SOFTKEYS_3");
 			}
 			else
 			{
-#if DEBUG
-					debug_message.Text = "PFD_SOFTKEY3";
-#endif
-				if (VS.HVars.Exists("H:AS1000_PFD_SOFTKEYS_3"))
-				{
-					VS.HVars["H:AS1000_PFD_SOFTKEYS_3"].Set();
-#if DEBUG
-					debug_message.Text = "PFD_SOFTKEY3_send";
-#endif
-				}
+				sendHver("H:AS1000_PFD_SOFTKEYS_3");
 			}
-			switchToMSFS();
 		}
-
 		private void key4_Click(object sender, EventArgs e)
 		{
-			connectToWASM();
 			if (eventMode == "MFD")
 			{
-#if DEBUG
-					debug_message.Text = "MFD_SOFTKEY4";
-#endif
-				if (VS.HVars.Exists("H:AS1000_MFD_SOFTKEYS_4"))
-				{
-					VS.HVars["H:AS1000_MFD_SOFTKEYS_4"].Set();
-#if DEBUG
-					debug_message.Text = "MFD_SOFTKEY4_send";
-#endif
-				}
+				sendHver("H:AS1000_MFD_SOFTKEYS_4");
 			}
 			else
 			{
-#if DEBUG
-					debug_message.Text = "PFD_SOFTKEY4";
-#endif
-				if (VS.HVars.Exists("H:AS1000_PFD_SOFTKEYS_4"))
-				{
-					VS.HVars["H:AS1000_PFD_SOFTKEYS_4"].Set();
-#if DEBUG
-					debug_message.Text = "PFD_SOFTKEY4_send";
-#endif
-				}
+				sendHver("H:AS1000_PFD_SOFTKEYS_4");
 			}
-			switchToMSFS();
 		}
 
 		private void key5_Click(object sender, EventArgs e)
 		{
-			connectToWASM();
 			if (eventMode == "MFD")
 			{
-#if DEBUG
-					debug_message.Text = "MFD_SOFTKEY5";
-#endif
-				if (VS.HVars.Exists("H:AS1000_MFD_SOFTKEYS_5"))
-				{
-					VS.HVars["H:AS1000_MFD_SOFTKEYS_5"].Set();
-#if DEBUG
-					debug_message.Text = "MFD_SOFTKEY5_send";
-#endif
-				}
+				sendHver("H:AS1000_MFD_SOFTKEYS_5");
 			}
 			else
 			{
-#if DEBUG
-					debug_message.Text = "PFD_SOFTKEY5";
-#endif
-				if (VS.HVars.Exists("H:AS1000_PFD_SOFTKEYS_5"))
-				{
-					VS.HVars["H:AS1000_PFD_SOFTKEYS_5"].Set();
-#if DEBUG
-					debug_message.Text = "PFD_SOFTKEY5_send";
-#endif
-				}
+				sendHver("H:AS1000_PFD_SOFTKEYS_5");
 			}
-			switchToMSFS();
-
 		}
-
 		private void key6_Click(object sender, EventArgs e)
 		{
-			connectToWASM();
 			if (eventMode == "MFD")
 			{
-#if DEBUG
-					debug_message.Text = "MFD_SOFTKEY6";
-#endif
-				if (VS.HVars.Exists("H:AS1000_MFD_SOFTKEYS_6"))
-				{
-					VS.HVars["H:AS1000_MFD_SOFTKEYS_6"].Set();
-#if DEBUG
-					debug_message.Text = "MFD_SOFTKEY6_send";
-#endif
-				}
+				sendHver("H:AS1000_MFD_SOFTKEYS_6");
 			}
 			else
 			{
-#if DEBUG
-					debug_message.Text = "PFD_SOFTKEY6";
-#endif
-				if (VS.HVars.Exists("H:AS1000_PFD_SOFTKEYS_6"))
-				{
-					VS.HVars["H:AS1000_PFD_SOFTKEYS_6"].Set();
-#if DEBUG
-					debug_message.Text = "PFD_SOFTKEY6_send";
-#endif
-				}
+				sendHver("H:AS1000_PFD_SOFTKEYS_6");
 			}
-
-			switchToMSFS();
 		}
-
 		private void key7_Click(object sender, EventArgs e)
 		{
-			connectToWASM();
 			if (eventMode == "MFD")
 			{
-#if DEBUG
-					debug_message.Text = "MFD_SOFTKEY7";
-#endif
-				if (VS.HVars.Exists("H:AS1000_MFD_SOFTKEYS_7"))
-				{
-					VS.HVars["H:AS1000_MFD_SOFTKEYS_7"].Set();
-#if DEBUG
-					debug_message.Text = "MFD_SOFTKEY7_send";
-#endif
-				}
+				sendHver("H:AS1000_MFD_SOFTKEYS_7");
 			}
 			else
 			{
-#if DEBUG
-					debug_message.Text = "PFD_SOFTKEY7";
-#endif
-				if (VS.HVars.Exists("H:AS1000_PFD_SOFTKEYS_7"))
-				{
-					VS.HVars["H:AS1000_PFD_SOFTKEYS_7"].Set();
-#if DEBUG
-					debug_message.Text = "PFD_SOFTKEY7_send";
-#endif
-				}
+				sendHver("H:AS1000_PFD_SOFTKEYS_7");
 			}
-			switchToMSFS();
 		}
-
 		private void key8_Click(object sender, EventArgs e)
 		{
-			connectToWASM();
 			if (eventMode == "MFD")
 			{
-#if DEBUG
-					debug_message.Text = "MFD_SOFTKEY8";
-#endif
-				if (VS.HVars.Exists("H:AS1000_MFD_SOFTKEYS_8"))
-				{
-					VS.HVars["H:AS1000_MFD_SOFTKEYS_8"].Set();
-#if DEBUG
-					debug_message.Text = "MFD_SOFTKEY8_send";
-#endif
-				}
+				sendHver("H:AS1000_MFD_SOFTKEYS_8");
 			}
 			else
 			{
-#if DEBUG
-					debug_message.Text = "PFD_SOFTKEY8";
-#endif
-				if (VS.HVars.Exists("H:AS1000_PFD_SOFTKEYS_8"))
-				{
-					VS.HVars["H:AS1000_PFD_SOFTKEYS_8"].Set();
-#if DEBUG
-					debug_message.Text = "PFD_SOFTKEY8_send";
-#endif
-				}
+				sendHver("H:AS1000_PFD_SOFTKEYS_8");
 			}
-			switchToMSFS();
-
 		}
-
 		private void key9_Click(object sender, EventArgs e)
 		{
-			connectToWASM();
 			if (eventMode == "MFD")
 			{
-#if DEBUG
-					debug_message.Text = "MFD_SOFTKEY9";
-#endif
-				if (VS.HVars.Exists("H:AS1000_MFD_SOFTKEYS_9"))
-				{
-					VS.HVars["H:AS1000_MFD_SOFTKEYS_9"].Set();
-#if DEBUG
-					debug_message.Text = "MFD_SOFTKEY9_send";
-#endif
-				}
+				sendHver("H:AS1000_MFD_SOFTKEYS_9");
 			}
 			else
 			{
-#if DEBUG
-					debug_message.Text = "PFD_SOFTKEY9";
-#endif
-				if (VS.HVars.Exists("H:AS1000_PFD_SOFTKEYS_9"))
-				{
-					VS.HVars["H:AS1000_PFD_SOFTKEYS_9"].Set();
-#if DEBUG
-					debug_message.Text = "PFD_SOFTKEY9_send";
-#endif
-				}
+				sendHver("H:AS1000_PFD_SOFTKEYS_9");
 			}
-
-			switchToMSFS();
 		}
-
 		private void key10_Click(object sender, EventArgs e)
 		{
-			connectToWASM();
 			if (eventMode == "MFD")
 			{
-#if DEBUG
-					debug_message.Text = "MFD_SOFTKEY10";
-#endif
-				if (VS.HVars.Exists("H:AS1000_MFD_SOFTKEYS_10"))
-				{
-					VS.HVars["H:AS1000_MFD_SOFTKEYS_10"].Set();
-#if DEBUG
-					debug_message.Text = "MFD_SOFTKEY10_send";
-#endif
-				}
+				sendHver("H:AS1000_MFD_SOFTKEYS_10");
 			}
 			else
 			{
-#if DEBUG
-					debug_message.Text = "PFD_SOFTKEY10";
-#endif
-				if (VS.HVars.Exists("H:AS1000_PFD_SOFTKEYS_10"))
-				{
-					VS.HVars["H:AS1000_PFD_SOFTKEYS_10"].Set();
-#if DEBUG
-					debug_message.Text = "PFD_SOFTKEY10_send";
-#endif
-				}
+				sendHver("H:AS1000_PFD_SOFTKEYS_10");
 			}
-
-			switchToMSFS();
 		}
-
 		private void key11_Click(object sender, EventArgs e)
 		{
-			connectToWASM();
 			if (eventMode == "MFD")
 			{
-#if DEBUG
-					debug_message.Text = "MFD_SOFTKEY11";
-#endif
-				if (VS.HVars.Exists("H:AS1000_MFD_SOFTKEYS_11"))
-				{
-					VS.HVars["H:AS1000_MFD_SOFTKEYS_11"].Set();
-#if DEBUG
-					debug_message.Text = "MFD_SOFTKEY11_send";
-#endif
-				}
+				sendHver("H:AS1000_MFD_SOFTKEYS_11");
 			}
 			else
 			{
-#if DEBUG
-					debug_message.Text = "PFD_SOFTKEY11";
-#endif
-				if (VS.HVars.Exists("H:AS1000_PFD_SOFTKEYS_11"))
-				{
-					VS.HVars["H:AS1000_PFD_SOFTKEYS_11"].Set();
-#if DEBUG
-					debug_message.Text = "PFD_SOFTKEY11_send";
-#endif
-				}
+				sendHver("H:AS1000_PFD_SOFTKEYS_11");
 			}
-
-			switchToMSFS();
 		}
-
 		private void key12_Click(object sender, EventArgs e)
 		{
-			connectToWASM();
 			if (eventMode == "MFD")
 			{
-#if DEBUG
-					debug_message.Text = "MFD_SOFTKEY12";
-#endif
-				if (VS.HVars.Exists("H:AS1000_MFD_SOFTKEYS_12"))
-				{
-					VS.HVars["H:AS1000_MFD_SOFTKEYS_12"].Set();
-#if DEBUG
-					debug_message.Text = "MFD_SOFTKEY12_send";
-#endif
-				}
+				sendHver("H:AS1000_MFD_SOFTKEYS_12");
 			}
 			else
 			{
-#if DEBUG
-					debug_message.Text = "PFD_SOFTKEY12";
-#endif
-				if (VS.HVars.Exists("H:AS1000_PFD_SOFTKEYS_12"))
-				{
-					VS.HVars["H:AS1000_PFD_SOFTKEYS_12"].Set();
-#if DEBUG
-					debug_message.Text = "PFD_SOFTKEY12_send";
-#endif
-				}
+				sendHver("H:AS1000_PFD_SOFTKEYS_12");
 			}
-
-			switchToMSFS();
 		}
-
 		private Point mouseLoc;
 		private void frmMain_MouseDown(object sender, MouseEventArgs e)
 		{
