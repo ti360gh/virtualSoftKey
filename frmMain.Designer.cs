@@ -30,6 +30,7 @@ namespace virtualSoftKey
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.key10 = new System.Windows.Forms.Label();
 			this.key9 = new System.Windows.Forms.Label();
@@ -45,7 +46,10 @@ namespace virtualSoftKey
 			this.key12 = new System.Windows.Forms.Label();
 			this.button1 = new System.Windows.Forms.Button();
 			this.debug_message = new System.Windows.Forms.Label();
+			this.contextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.lockPositionMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.tableLayoutPanel1.SuspendLayout();
+			this.contextMenu.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// tableLayoutPanel1
@@ -255,10 +259,25 @@ namespace virtualSoftKey
 			this.debug_message.Size = new System.Drawing.Size(0, 15);
 			this.debug_message.TabIndex = 1;
 			// 
+			// contextMenu
+			// 
+			this.contextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lockPositionMenuItem});
+			this.contextMenu.Name = "contextMenu";
+			this.contextMenu.Size = new System.Drawing.Size(181, 48);
+			// 
+			// fixPositionToolStripMenuItem
+			// 
+			this.lockPositionMenuItem.Name = "lockPositionMenuItem";
+			this.lockPositionMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.lockPositionMenuItem.Text = "Lock position";
+			this.lockPositionMenuItem.Click += new System.EventHandler(this.lockPositionMenuItem_Click);
+			// 
 			// frmMain
 			// 
 			this.BackColor = System.Drawing.Color.Red;
 			this.ClientSize = new System.Drawing.Size(1062, 50);
+			this.ContextMenuStrip = this.contextMenu;
 			this.ControlBox = false;
 			this.Controls.Add(this.debug_message);
 			this.Controls.Add(this.tableLayoutPanel1);
@@ -276,6 +295,7 @@ namespace virtualSoftKey
 			this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmMain_MouseDown);
 			this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.frmMain_MouseMove);
 			this.tableLayoutPanel1.ResumeLayout(false);
+			this.contextMenu.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -297,6 +317,8 @@ namespace virtualSoftKey
 		private System.Windows.Forms.Label key4;
 		private System.Windows.Forms.Label key3;
 		private System.Windows.Forms.Label key2;
+		private System.Windows.Forms.ContextMenuStrip contextMenu;
+		private System.Windows.Forms.ToolStripMenuItem lockPositionMenuItem;
 	}
 }
 

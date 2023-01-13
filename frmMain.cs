@@ -68,6 +68,8 @@ namespace virtualSoftKey
 			VS.Stop();
 			Properties.Settings.Default.Location = this.Location;
 			Properties.Settings.Default.Size = this.Size;
+			Properties.Settings.Default.lockPosition = this.lockPositionMenuItem.Checked;
+			Properties.Settings.Default.mode = this.eventMode;
 			Properties.Settings.Default.Save();
 
 		}
@@ -77,6 +79,9 @@ namespace virtualSoftKey
 			{
 				this.Size = Properties.Settings.Default.Size;
 				this.Location = Properties.Settings.Default.Location;
+				this.lockPositionMenuItem.Checked = Properties.Settings.Default.lockPosition;
+				this.eventMode = Properties.Settings.Default.mode;
+				button1.Text = this.eventMode;
 			}
 		}
 
@@ -150,7 +155,6 @@ namespace virtualSoftKey
 				sendHver("H:AS1000_PFD_SOFTKEYS_1");
 			}
 		}
-
 		private void key2_Click(object sender, EventArgs e)
 		{
 			if (eventMode == "MFD")
@@ -184,7 +188,6 @@ namespace virtualSoftKey
 				sendHver("H:AS1000_PFD_SOFTKEYS_4");
 			}
 		}
-
 		private void key5_Click(object sender, EventArgs e)
 		{
 			if (eventMode == "MFD")
@@ -286,12 +289,15 @@ namespace virtualSoftKey
 		{
 			if (e.Button == MouseButtons.Left)
 			{
+				if (this.lockPositionMenuItem.Checked == false)
+				{
 #if DEBUG
-				debug_message.Text = "form_move";
+					debug_message.Text = "form_move";
 #endif
-				int dx = e.Location.X - mouseLoc.X;
-				int dy = e.Location.Y - mouseLoc.Y;
-				this.Location = new Point(this.Location.X + dx, this.Location.Y + dy);
+					int dx = e.Location.X - mouseLoc.X;
+					int dy = e.Location.Y - mouseLoc.Y;
+					this.Location = new Point(this.Location.X + dx, this.Location.Y + dy);
+				}
 			}
 
 		}
@@ -306,9 +312,17 @@ namespace virtualSoftKey
 			{
 				var cursor = this.PointToClient(Cursor.Position);
 
-				if (_Right.Contains(cursor)) message.Result = (IntPtr)HTRIGHT;
+				if (this.lockPositionMenuItem.Checked == false)
+					if (_Right.Contains(cursor)) message.Result = (IntPtr)HTRIGHT;
 			}
 		}
 
+		private void lockPositionMenuItem_Click(object sender, EventArgs e)
+		{
+			if (this.lockPositionMenuItem.Checked == true)
+				this.lockPositionMenuItem.Checked = false;
+			else
+				this.lockPositionMenuItem.Checked = true;
+		}
 	}
 }
