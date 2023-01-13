@@ -1,6 +1,6 @@
 ﻿# virtualSoftKey
 
-Send WorkingTitle G1000 Nxi soft key presses (H:AS1000_PFD_SOFTKEYS_[0-9] / H:AS1000_MFD_SOFTKEYS[0-9]) to MSFS via FSUIPC WASM module.
+Send WorkingTitle G1000 Nxi soft key presses (H:AS1000_PFD_SOFTKEYS_[0-9] / H:AS1000_MFD_SOFTKEYS_[0-9]) to MSFS via FSUIPC WASM module.
 
 Used to pop out a G1000 window on the touch screen display.
 
@@ -61,8 +61,11 @@ ti360✍ https://twitter.com/ti360
 
 ## Version History
 
-* 0.1
+* 0.1.0
     * Initial Release
+* 0.2.0
+    * Added "Lock Position" context menu.
+    * PFD/MFD mode now saved.
 
 ## License
 
