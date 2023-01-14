@@ -47,7 +47,9 @@ namespace virtualSoftKey
 			this.button1 = new System.Windows.Forms.Button();
 			this.debug_message = new System.Windows.Forms.Label();
 			this.contextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-			this.lockPositionMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.lockWindowMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+			this.aboutMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.contextMenu.SuspendLayout();
 			this.SuspendLayout();
@@ -262,16 +264,30 @@ namespace virtualSoftKey
 			// contextMenu
 			// 
 			this.contextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lockPositionMenuItem});
+            this.lockWindowMenuItem,
+            this.toolStripSeparator1,
+            this.aboutMenuItem});
 			this.contextMenu.Name = "contextMenu";
-			this.contextMenu.Size = new System.Drawing.Size(181, 48);
+			this.contextMenu.Size = new System.Drawing.Size(146, 54);
 			// 
-			// fixPositionToolStripMenuItem
+			// lockWindowMenuItem
 			// 
-			this.lockPositionMenuItem.Name = "lockPositionMenuItem";
-			this.lockPositionMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.lockPositionMenuItem.Text = "Lock position";
-			this.lockPositionMenuItem.Click += new System.EventHandler(this.lockPositionMenuItem_Click);
+			this.lockWindowMenuItem.Name = "lockWindowMenuItem";
+			this.lockWindowMenuItem.Size = new System.Drawing.Size(145, 22);
+			this.lockWindowMenuItem.Text = "Lock position";
+			this.lockWindowMenuItem.Click += new System.EventHandler(this.lockWindowMenuItem_Click);
+			// 
+			// toolStripSeparator1
+			// 
+			this.toolStripSeparator1.Name = "toolStripSeparator1";
+			this.toolStripSeparator1.Size = new System.Drawing.Size(142, 6);
+			// 
+			// aboutMenuItem
+			// 
+			this.aboutMenuItem.Name = "aboutMenuItem";
+			this.aboutMenuItem.Size = new System.Drawing.Size(145, 22);
+			this.aboutMenuItem.Text = "About";
+			this.aboutMenuItem.Click += new System.EventHandler(this.aboutMenuItem_Click);
 			// 
 			// frmMain
 			// 
@@ -318,7 +334,9 @@ namespace virtualSoftKey
 		private System.Windows.Forms.Label key3;
 		private System.Windows.Forms.Label key2;
 		private System.Windows.Forms.ContextMenuStrip contextMenu;
-		private System.Windows.Forms.ToolStripMenuItem lockPositionMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem lockWindowMenuItem;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+		private System.Windows.Forms.ToolStripMenuItem aboutMenuItem;
 	}
 }
 

@@ -61,13 +61,18 @@ ti360✍ https://twitter.com/ti360
 
 ## Version History
 
-* 0.1.0
+* 0.1.0.0
     * Initial Release
-* 0.2.0
+* 0.2.0.0
     * Added "Lock Position" context menu.
     * PFD/MFD mode now saved.
+
+* 0.2.1.0
+    * Added an About box.
 
 ## License
 
 This project is licensed under the MIT License - see the LICENSE.md file for details
+Uses the [FSUIPC Client DLL for .NET](http://fsuipc.paulhenty.com/) by Paul Henty 
+
 

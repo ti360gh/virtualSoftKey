@@ -68,7 +68,7 @@ namespace virtualSoftKey
 			VS.Stop();
 			Properties.Settings.Default.Location = this.Location;
 			Properties.Settings.Default.Size = this.Size;
-			Properties.Settings.Default.lockPosition = this.lockPositionMenuItem.Checked;
+			Properties.Settings.Default.lockPosition = this.lockWindowMenuItem.Checked;
 			Properties.Settings.Default.mode = this.eventMode;
 			Properties.Settings.Default.Save();
 
@@ -79,7 +79,7 @@ namespace virtualSoftKey
 			{
 				this.Size = Properties.Settings.Default.Size;
 				this.Location = Properties.Settings.Default.Location;
-				this.lockPositionMenuItem.Checked = Properties.Settings.Default.lockPosition;
+				this.lockWindowMenuItem.Checked = Properties.Settings.Default.lockPosition;
 				this.eventMode = Properties.Settings.Default.mode;
 				button1.Text = this.eventMode;
 			}
@@ -289,7 +289,7 @@ namespace virtualSoftKey
 		{
 			if (e.Button == MouseButtons.Left)
 			{
-				if (this.lockPositionMenuItem.Checked == false)
+				if (this.lockWindowMenuItem.Checked == false)
 				{
 #if DEBUG
 					debug_message.Text = "form_move";
@@ -312,17 +312,23 @@ namespace virtualSoftKey
 			{
 				var cursor = this.PointToClient(Cursor.Position);
 
-				if (this.lockPositionMenuItem.Checked == false)
+				if (this.lockWindowMenuItem.Checked == false)
 					if (_Right.Contains(cursor)) message.Result = (IntPtr)HTRIGHT;
 			}
 		}
 
-		private void lockPositionMenuItem_Click(object sender, EventArgs e)
+		private void lockWindowMenuItem_Click(object sender, EventArgs e)
 		{
-			if (this.lockPositionMenuItem.Checked == true)
-				this.lockPositionMenuItem.Checked = false;
+			if (this.lockWindowMenuItem.Checked == true)
+				this.lockWindowMenuItem.Checked = false;
 			else
-				this.lockPositionMenuItem.Checked = true;
+				this.lockWindowMenuItem.Checked = true;
+		}
+
+		private void aboutMenuItem_Click(object sender, EventArgs e)
+		{
+			frmAbout aboutBox = new frmAbout();
+			aboutBox.Show();
 		}
 	}
 }
