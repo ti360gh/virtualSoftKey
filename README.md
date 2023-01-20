@@ -47,9 +47,9 @@ Just run *vitualSoftKey.exe* and move it over the avobe G1000 pop-out panel.
 
 ## Help
 
-* The error display says *connect failed*.
+* The error display says *connect failed* even when running MSFS.
 
-You need to install FSUIPC WASM Module.
+You need to install FSUIPC **WASM Module**.(not FSUIPC)
 
 * Nothing happens when I tap.
 
